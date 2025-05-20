@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Viewer - BASE Mainnet</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 NFT Viewer - BASE Mainnet</h1>
+            <p class="subtitle">Xem danh sách NFT của bất kỳ ví nào trên mạng BASE</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="input-group">
+                    <input type="text" 
+                           id="walletAddress" 
+                           placeholder="Nhập địa chỉ ví (ví dụ: 0x...)" 
+                           title="Nhập địa chỉ ví Ethereum của bạn">
+                    <button id="searchButton" onclick="searchNFTs()">Tìm kiếm NFT</button>
+                </div>
+                <p class="hint">Ví dụ: Nhập địa chỉ ví Ethereum bắt đầu bằng '0x' để xem NFT</p>
+            </div>
+
+            <div id="loadingIndicator" class="loading-indicator hidden">
+                <div class="spinner"></div>
+                <p>Đang tải dữ liệu...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <div id="nftGrid" class="nft-grid"></div>
+
+            <div id="noNFTMessage" class="no-nft-message hidden">
+                <p>Không tìm thấy NFT nào trong ví này.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Dự án NFT Viewer - Được tạo để học về Web3 và Blockchain</p>
+        </footer>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
